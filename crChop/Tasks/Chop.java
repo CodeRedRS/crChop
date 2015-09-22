@@ -45,10 +45,10 @@ public class Chop extends Task<ClientContext> {
         }
 
         if (!tree.inViewport()) {
-            ctx.camera.pitch(Random.nextInt(0, 15));
             ctx.camera.turnTo(tree);
             Paint.status = "Going to " + tree.name();
             if (!tree.inViewport()) {
+                ctx.camera.pitch(Random.nextInt(0, 15));
                 if (ctx.movement.step(tree)) {
                     ctx.camera.turnTo(tree);
                     if (ctx.players.local().inMotion()) {

@@ -4,6 +4,7 @@ import org.crChop.Enums.Tree;
 import org.crChop.Tasks.*;
 import org.crChop.crChop;
 import org.powerbot.script.rt4.ClientContext;
+import org.powerbot.script.rt4.Equipment;
 import org.powerbot.script.rt4.GameObject;
 import org.powerbot.script.rt4.Item;
 
@@ -18,6 +19,8 @@ import java.util.HashSet;
  * Created by Dakota on 9/9/2015.
  */
 public class Gui extends JFrame {
+
+    public boolean started = false;
 
     final JButton btnStart;
     final JButton btnCancel;
@@ -83,6 +86,7 @@ public class Gui extends JFrame {
                     crChop.taskList.addAll(Arrays.asList(new Drop(ctx), new Run(ctx), new Inventory(ctx), new Chop(ctx, tree, axeId), new Antiban(ctx)));
                 }
 
+                started = true;
                 dispose();
             }
         });

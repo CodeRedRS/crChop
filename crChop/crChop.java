@@ -109,7 +109,7 @@ public class crChop extends PollingScript<ClientContext> implements PaintListene
     @Override
     public void repaint(Graphics g) {
         cursor.drawMouse(g);
-        if (ctx.game.loggedIn()) {
+        if (ctx.game.loggedIn() && gui.getTree() != null) {
             Paint paint = new Paint(ctx, gui.getTree(), logs);
             paint.repaint(g);
         }
